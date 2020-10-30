@@ -16,7 +16,7 @@ const driver = wd.promiseChainRemote('localhost', PORT);
 
 Before({timeout: 50000}, async () => {
   await driver.init(config);
-  await driver.sleep(6000); // wait for app to load
+  await driver.sleep(20000); // wait for app to load
 });
 
 After(async() => {
@@ -28,7 +28,7 @@ After(async() => {
 //   assert.equal(isWelcomeMessage, true);
 // });
 
-Given ('I am in app home page', {timeout: 500000}, async () => {
+Given ('I am in app home page', {timeout: 30000}, async () => {
   let isWelcomeMessage = await driver.hasElementByAccessibilityId("welcome-message");
   assert.equal(isWelcomeMessage, true);
 });
@@ -38,8 +38,18 @@ When ('I click on "Pressione" button', async () => {
   loginButton.click();
 });
 
-Then ('I see the alert', {timeout: 2000}, async () => {
-  await driver.setImplicitWaitTimeout(1500);
-  let isAlert = await driver.hasElementByXPath("//*[@text='Você apertou o botão']");
-  assert.equal(isAlert, true);
+// Given ('I am in camera', {timeout: 30000}, async () => {
+//   let isWelcomeMessage = await driver.hasElementByAccessibilityId("camera-page");
+//   assert.equal(isWelcomeMessage, true);
+// });
+
+When ('I click on "Pressione" na camera', async () => {
+  let loginButtonCamera = await driver.elementByAccessibilityId("button-camera");
+  loginButtonCamera.click();
 });
+
+// Then ('I see the alert', {timeout: 2000}, async () => {
+//   await driver.setImplicitWaitTimeout(1500);
+//   let isAlert = await driver.hasElementByXPath("//*[@text='Você apertou o botão']");
+//   assert.equal(isAlert, true);
+// });

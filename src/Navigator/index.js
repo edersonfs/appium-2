@@ -2,6 +2,7 @@ import { createAppContainer, createSwitchNavigator } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
 
 import Welcome from '../Controllers/welcome.controller'
+import Selfie from '../Controllers/selfie.controller'
 
 import * as Routes from './routes'
 
@@ -19,7 +20,13 @@ const UserFirstAccessStack = createStackNavigator({
     navigationOptions: {
       gesturesEnabled: false
     }
-  }
+  },
+  [`${Routes.SelfieCapture}`]: {
+    screen: Selfie,
+    navigationOptions: {
+      gesturesEnabled: false
+    }
+  },
 })
 
 const AppNavigator = createSwitchNavigator(

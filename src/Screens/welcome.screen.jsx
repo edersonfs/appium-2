@@ -31,9 +31,7 @@ const WelcomeScreen = ({ handlers }) => {
         <Text style={styles.welcome} accessible={true} accessibilityLabel="welcome-message">Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
-        <Button onPress={() => {
-          Alert.alert('Você apertou o botão');
-        }} title="Pressione" color="#000000" accessibilityLabel="press-button"/>
+        <Button onPress={() => {handlers.login()}} title="Pressione" color="#000000" accessibilityLabel="press-button"/>
       </View>
     </>
   )

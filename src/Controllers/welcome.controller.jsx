@@ -13,7 +13,7 @@ const Welcome = () => {
   const { navigate, popToTop } = navigation
   // const { button } = language
 
-  const login = () => navigate(Routes.Selfie)  
+  const login = () => navigate(Routes.SelfieCapture)  
 
   const handlers = { login }
 

@@ -1,0 +1,35 @@
+export const color = {
+  PRIMARY: '#CF232E',
+  BACKGROUND: '#B21821',
+  SUCCESS: '#4DC1A1',
+  INFO: '#3998B5',
+  WARNING: '#EBB159',
+  DANGER: '#B21821',
+  WHITE: '#FFFFFF',
+  BLACK: '#000000',
+  GRAY: '#9B9B9B', // CINZA CLARO
+  GRAY_LIGHT: '#EBEBEB',
+  GRAY_LIGHTEN: '#6D717B',
+  GRAY_DARK: '#555860', // CINZA BDMG
+  GRAY_DARKNESS: '#464044', // CINZA ESCURO
+  BLUE: '#3998B5',
+  RED: '#FF0000'
+}
+
+export const constant = {
+  MARGIN: 12,
+  MARGIN_HORIZONTAL: 20,
+  MARGIN_VERTICAL: 10,
+  PADDING: 12,
+  PADDING_HORIZONTAL: 20
+}
+
+export const font = {
+  REGULAR: 'PTSans-Regular',
+  BOLD: 'PTSans-Bold',
+  TINY: 12,
+  SMALL: 14,
+  MEDIUM: 16,
+  LARGE: 20,
+  XLARGE: 24
+}
