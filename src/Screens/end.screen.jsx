@@ -11,7 +11,7 @@ import useGlobal from '../Store'
 // import Base from '../Components/Layout/base.component'
 // import BaseButton from '../Components/Layout/baseButton.component'
 
-const WelcomeScreen = ({ handlers }) => {
+const EndScreen = ({ handlers }) => {
   const [state] = useGlobal()
   const { content } = state
   // const { loginRegister } = content
@@ -28,10 +28,10 @@ const WelcomeScreen = ({ handlers }) => {
   return (
     <>
       <View style={styles.container}>
-        <Text style={styles.welcome} accessible={true} accessibilityLabel="welcome-message">Welcome to React Native!</Text>
+        <Text style={styles.welcome}>End Page!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
-        <Button onPress={() => {handlers.login()}} title="Pressione" color="#000000" accessibilityLabel="press-button"/>
+        <Button onPress={() => {handlers.login()}} title="Pressione" color="#000000" accessibilityLabel="press-button-end"/>
       </View>
     </>
   )
@@ -56,4 +56,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default WelcomeScreen
+export default EndScreen

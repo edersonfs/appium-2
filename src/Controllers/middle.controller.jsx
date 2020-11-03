@@ -3,25 +3,25 @@ import { useNavigation } from 'react-navigation-hooks'
 
 import useGlobal from '../Store'
 // import { language } from '../../Languages'
-import WelcomeScreen from '../Screens/welcome.screen'
+import MiddleScreen from '../Screens/middle.screen'
 import * as Routes from '../Navigator/routes'
 
-const Welcome = () => {
+const Middle = () => {
   const [state, actions] = useGlobal()
   // const { dialog } = state.content
   const navigation = useNavigation()
   const { navigate, popToTop } = navigation
   // const { button } = language
 
-  const login = () => navigate(Routes.Middle)  
+  const login = () => navigate(Routes.SelfieCapture)  
 
   const handlers = { login }
 
-  return <WelcomeScreen handlers={handlers} />
+  return <MiddleScreen handlers={handlers} />
 }
 
-Welcome.navigationOptions = {
+Middle.navigationOptions = {
   header: null
 }
 
-export default Welcome
+export default Middle

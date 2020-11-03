@@ -154,7 +154,7 @@ const Camera = ({ type, navigateBack, onPictureTaken, onStartCapture }) => {
         )}
       </View>
       <View style={styles.cameraButtonsWrapper}>
-        <TouchableWithoutFeedback accessibilityLabel="button-camera"
+        <TouchableWithoutFeedback accessible={true} accessibilityLabel="press-button-camera"
           onPress={() => {
             setProcessMessage('Processando...')
             setDisabled(true)

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { BackHandler } from 'react-native'
+import { BackHandler, View } from 'react-native'
 
 import Camera from '../Components/camera.component'
 
@@ -15,11 +15,13 @@ const SelfieScreen = ({ handlers }) => {
   }, [])
 
   return (
-    <Camera
-      type="front"
-      navigateBack={handlers.navigateBack}
-      onPictureTaken={handlers.onPictureTaken}
-    />
+    // <View accessible={true} accessibilityLabel="camera-message">
+      <Camera accessible={true} accessibilityLabel="camera-page" 
+        type="front"
+        navigateBack={handlers.navigateBack}
+        onPictureTaken={handlers.onPictureTaken}
+      />
+    // </View>
   )
 }
 

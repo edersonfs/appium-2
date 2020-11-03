@@ -23,11 +23,6 @@ After(async() => {
 	await driver.quit();
 });
 
-// Given ('Navigator', {timeout: 30000}, async () => {
-//   let isWelcomeMessage = await driver.hasElementByAccessibilityId("navigator");
-//   assert.equal(isWelcomeMessage, true);
-// });
-
 Given ('I am in app home page', {timeout: 30000}, async () => {
   let isWelcomeMessage = await driver.hasElementByAccessibilityId("welcome-message");
   assert.equal(isWelcomeMessage, true);
@@ -38,18 +33,35 @@ When ('I click on "Pressione" button', async () => {
   loginButton.click();
 });
 
-// Given ('I am in camera', {timeout: 30000}, async () => {
-//   let isWelcomeMessage = await driver.hasElementByAccessibilityId("camera-page");
-//   assert.equal(isWelcomeMessage, true);
-// });
-
-When ('I click on "Pressione" na camera', async () => {
-  let loginButtonCamera = await driver.elementByAccessibilityId("button-camera");
-  loginButtonCamera.click();
-});
-
 // Then ('I see the alert', {timeout: 2000}, async () => {
 //   await driver.setImplicitWaitTimeout(1500);
 //   let isAlert = await driver.hasElementByXPath("//*[@text='Você apertou o botão']");
 //   assert.equal(isAlert, true);
 // });
+
+Given ('I am in app middle page', {timeout: 30000}, async () => {
+  await driver.setImplicitWaitTimeout(30000);
+  let isMiddleMessage = await driver.hasElementByAccessibilityId("middle-message");
+  assert.equal(isMiddleMessage, true);
+});
+
+When ('I click on "Pressione-Middle" button', async () => {
+  let loginButton2 = await driver.elementByAccessibilityId("press-button-middle");
+  loginButton2.click();
+});
+
+When ('I click on "Pressione-Camera" button', {timeout: 30000}, async () => {
+  let loginButton3 = await driver.elementByAccessibilityId("press-button-camera");
+  loginButton3.click();
+});
+
+// Given ('I am in app end page', {timeout: 30000}, async () => {
+//   await driver.setImplicitWaitTimeout(30000);
+//   let isEndMessage = await driver.hasElementByAccessibilityId("end-message");
+//   assert.equal(isEndMessage, true);
+// });
+
+When ('I click on "Pressione-End" button', {timeout: 30000}, async () => {
+  let loginButton4 = await driver.elementByAccessibilityId("press-button-end");
+  loginButton4.click();
+});

@@ -3,6 +3,8 @@ import { createStackNavigator } from 'react-navigation-stack'
 
 import Welcome from '../Controllers/welcome.controller'
 import Selfie from '../Controllers/selfie.controller'
+import Middle from '../Controllers/middle.controller'
+import End from '../Controllers/end.controller'
 
 import * as Routes from './routes'
 
@@ -21,8 +23,20 @@ const UserFirstAccessStack = createStackNavigator({
       gesturesEnabled: false
     }
   },
+  [`${Routes.Middle}`]: {
+    screen: Middle,
+    navigationOptions: {
+      gesturesEnabled: false
+    }
+  },
   [`${Routes.SelfieCapture}`]: {
     screen: Selfie,
+    navigationOptions: {
+      gesturesEnabled: false
+    }
+  },
+  [`${Routes.End}`]: {
+    screen: End,
     navigationOptions: {
       gesturesEnabled: false
     }
