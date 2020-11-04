@@ -10,7 +10,9 @@ const config = {
   app: './android/app/build/outputs/apk/debug/app-debug.apk', // relative to root of project
   appPackage: 'com.reactnative_test',
   appActivity: 'com.reactnative_test.MainActivity',
-  automationName: 'uiautomator2' 
+  automationName: 'uiautomator2',
+  autoGrantPermissions: true,
+  noReset: false
 };
 const driver = wd.promiseChainRemote('localhost', PORT);
 
@@ -50,18 +52,24 @@ When ('I click on "Pressione-Middle" button', async () => {
   loginButton2.click();
 });
 
-When ('I click on "Pressione-Camera" button', {timeout: 30000}, async () => {
+Given ('I am in app camera page', {timeout: 30000}, async () => {
+  await driver.setImplicitWaitTimeout(30000);
+  let isCameraMessage = await driver.hasElementByAccessibilityId("camera-message");
+  assert.equal(isCameraMessage, true);
+});
+
+When ('I click on "Pressione-Camera" button', async () => {
   let loginButton3 = await driver.elementByAccessibilityId("press-button-camera");
   loginButton3.click();
 });
 
-// Given ('I am in app end page', {timeout: 30000}, async () => {
-//   await driver.setImplicitWaitTimeout(30000);
-//   let isEndMessage = await driver.hasElementByAccessibilityId("end-message");
-//   assert.equal(isEndMessage, true);
-// });
+Given ('I am in app end page', {timeout: 30000}, async () => {
+  await driver.setImplicitWaitTimeout(30000);
+  let isEndMessage = await driver.hasElementByAccessibilityId("end-message");
+  assert.equal(isEndMessage, true);
+});
 
-When ('I click on "Pressione-End" button', {timeout: 30000}, async () => {
+When ('I click on "Pressione-End" button', async () => {
   let loginButton4 = await driver.elementByAccessibilityId("press-button-end");
   loginButton4.click();
 });

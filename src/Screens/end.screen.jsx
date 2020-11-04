@@ -28,7 +28,7 @@ const EndScreen = ({ handlers }) => {
   return (
     <>
       <View style={styles.container}>
-        <Text style={styles.welcome}>End Page!</Text>
+        <Text style={styles.welcome} accessible={true} accessibilityLabel="end-message">End Page!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
         <Button onPress={() => {handlers.login()}} title="Pressione" color="#000000" accessibilityLabel="press-button-end"/>

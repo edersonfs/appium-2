@@ -5,6 +5,7 @@ import {
   View,
   StyleSheet,
   TouchableWithoutFeedback,
+  Button,
   Text
 } from 'react-native'
 import { RNCamera } from 'react-native-camera'
@@ -153,7 +154,7 @@ const Camera = ({ type, navigateBack, onPictureTaken, onStartCapture }) => {
           PermissionDenied()
         )}
       </View>
-      <View style={styles.cameraButtonsWrapper}>
+      <View style={styles.cameraButtonsWrapper} accessible={true} accessibilityLabel="camera-message">
         <TouchableWithoutFeedback accessible={true} accessibilityLabel="press-button-camera"
           onPress={() => {
             setProcessMessage('Processando...')

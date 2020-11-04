@@ -16,7 +16,7 @@ const SelfieScreen = ({ handlers }) => {
 
   return (
     // <View accessible={true} accessibilityLabel="camera-message">
-      <Camera accessible={true} accessibilityLabel="camera-page" 
+      <Camera
         type="front"
         navigateBack={handlers.navigateBack}
         onPictureTaken={handlers.onPictureTaken}

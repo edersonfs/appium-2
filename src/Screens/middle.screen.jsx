@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
-import { BackHandler, Alert, Platform, StyleSheet, Text, View, Button, StatusBar } from 'react-native'
+import { BackHandler, Alert, Platform, StyleSheet, Text, View, Button, StatusBar, TouchableWithoutFeedback } from 'react-native'
 // import { Text } from '@ui-kitten/components'
+import CameraIcon from '../Assets/Images/camera.svg'
 
 import useGlobal from '../Store'
 
@@ -31,7 +32,11 @@ const MiddleScreen = ({ handlers }) => {
         <Text style={styles.welcome} accessible={true} accessibilityLabel="middle-message">Middle Page!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
-        <Button onPress={() => {handlers.login()}} title="Pressione" color="#000000" accessibilityLabel="press-button-middle"/>
+        <View>
+          <TouchableWithoutFeedback onPress={() => {handlers.login()}} title="Pressione" color="#000000" accessibilityLabel="press-button-middle">
+            <CameraIcon height={50} width={50} />
+          </TouchableWithoutFeedback>
+        </View>
       </View>
     </>
   )
